@@ -1,2 +1,0 @@
-class Present < ApplicationRecord
-end
