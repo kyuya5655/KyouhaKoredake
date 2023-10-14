@@ -62,7 +62,3 @@ gem 'kaminari','~> 1.2.1'
 gem 'pry-byebug'
 
 gem "enum_help"
-
-gem 'devise-i18n'
-
-gem 'devise-i18n-views'

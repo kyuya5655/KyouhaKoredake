@@ -1,9 +1,9 @@
-<h3><%= @user.name %>さん</h3>
+<h3><%= current_user.name %>さん</h3>
 <p>
   お疲れさまです。<br />
-  # 今日（）のタスクは( )件です。今日はこれだけ頑張りましょう！
+  今日（）のタスクは( )件です。今日はこれだけ頑張りましょう！
 </p>
-<p><%= image_tag 'あなた次第.png', size: '300x300' %>></p>
+<p><%= image_tag 'あなた次第.png', size: '300x300' %></p>
 
 <table border="1">
   <tr align="center">

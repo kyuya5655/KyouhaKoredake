@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def withdraw
     current_user.update(is_deleted: true)
     reset_session
-    redirect_to new_user_registration
+    redirect_to new_user_registration_path
   end
 
   private

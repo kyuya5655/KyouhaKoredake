@@ -21,7 +21,7 @@ class TasksController < ApplicationController
   end
 
   def today
-    
+
   end
 
 end

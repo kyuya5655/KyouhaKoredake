@@ -1,9 +1,4 @@
-<p class='introduce'>
-  お疲れさまです。「今日はこれだけ」運営部です。<br />
-  当サイトは、<strong>タスク管理のサイト</strong>です。初めてご利用の方は<strong>About</strong>ページをご確認ください。<br />
-  User登録されている方は必要事項を入力し、「ログイン」ボタンを押下してください。<br />
-  User登録されていない方は、「新規登録」ボタンから必要事項の入力をお願いします。<br />
-</p>
+<h2>ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -27,11 +22,10 @@
   </div>
 <% end %>
 
-
-<%= link_to "新規登録画面へ", new_user_registration_path %>
+<p>
+  アカウントをお持ちでない方は
+  <%= link_to "こちら", new_user_registration_path %>
+  から
+</p>
 
 <!--<= render "devise/shared/links" %>-->
-
-<div class="image">
-  <%= image_tag '名刺.png', size: '300x300' %>
-</div>
