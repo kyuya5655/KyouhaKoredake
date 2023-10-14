@@ -4,10 +4,10 @@ class CreateTasks < ActiveRecord::Migration[6.1]
 
       t.integer :user_id, null: false
       t.integer :present_id, null: false
-      t.string :task_name, null: false
+      t.string :name, null: false
       t.string :present, null: false
-      t.integer :task_status, default: 0, null: false
-      t.text :task_note
+      t.integer :status, default: 0, null: false
+      t.text :note
       t.date :start, null: false
       t.date :limit, null: false
 

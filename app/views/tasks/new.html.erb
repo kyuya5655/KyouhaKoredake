@@ -1,0 +1,56 @@
+<h3>タスク追加</h3>
+
+<%= form_with model: @task do |f| %>
+
+<table border="1" style="border-collapse: collapse">
+  <tr align='center'>
+    <td>タスク名</td>
+    <td>
+      <div class="form-group">
+        <label for="task_name"></label>
+        <%= f.text_field :task_name %>
+      </div>
+    </td>
+  </tr>
+  <tr align='center'>
+    <td>開始日</td>
+    <td>
+      <div class="form-group">
+        <label for="start"></label>
+        <%= f.date_field :start %>
+      </div>
+    </td>
+  </tr>
+  <tr align='center'>
+    <td>期限</td>
+    <td>
+      <div class="form-group">
+        <label for="limit"></label>
+        <%= f.date_field :limit %>
+      </div>
+    </td>
+  </tr>
+  <tr align='center'>
+    <td>ご褒美</td>
+    <td>
+      <div class="form-group">
+        <label for="present"></label>
+        <%= f.text_field :present %>
+      </div>
+    </td>
+  </tr>
+  <tr align='center'>
+    <td>メモ</td>
+    <td>
+      <div class="form-group">
+        <label for="limit"></label>
+        <%= f.text_field :note%>
+        <%= f.file_field :image, accept: "image/*" %>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<%= f.submit "追加する" %>
+
+<% end %>

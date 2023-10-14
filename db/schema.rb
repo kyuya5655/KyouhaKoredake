@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 2023_10_12_213233) do
   create_table "tasks", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "present_id", null: false
-    t.string "task_name", null: false
+    t.string "name", null: false
     t.string "present", null: false
-    t.integer "task_status", default: 0, null: false
-    t.text "task_note"
+    t.integer "status", default: 0, null: false
+    t.text "note"
     t.date "start", null: false
     t.date "limit", null: false
     t.datetime "created_at", precision: 6, null: false

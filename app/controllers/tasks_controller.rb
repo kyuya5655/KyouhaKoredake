@@ -24,4 +24,11 @@ class TasksController < ApplicationController
 
   end
 
+  private
+
+  def tasks_params
+    params.require(:task).permit(:name, :start, :limit, :note, :note_image, :present, :status)
+  end
+
+
 end
