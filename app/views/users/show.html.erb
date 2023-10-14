@@ -1,0 +1,27 @@
+<h3>ユーザー情報</h3>
+
+<p><%= link_to "編集する", edit_user_path %></p>
+
+<table>
+  <tr align='center'>
+    <td>ユーザー名</td>
+    <td><%= current_user.name %></td>
+  </tr>
+  <tr align='center'>
+    <td>メールアドレス</td>
+    <td><%= current_user.email %></td>
+  </tr>
+  <tr align='cernter'>
+    <td>
+      今日はこれだけ<br />
+      （残りタスク数）
+    </td>
+    <td></td>
+  </tr>
+  <tr align='center'>
+    <td>
+      達成率<br />
+      （一週間）
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,25 @@
+<h3>ユーザー情報編集</h3>
+
+<%= form_with model: current_user do |f| %>
+
+  <div class="form-group">
+    <label for="user_name">ユーザー名</label>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form-group">
+    <div class="email">メールアドレス
+      <label for="email"></label>
+      <%= f.text_field :email, autofocus: true, placeholder:"メールアドレス" %>
+    </div>
+  </div>
+
+<div class='quit_check'>
+  ユーザーステータス
+  <%= link_to "退会する", users_quit_check_path %>
+</div>
+
+
+  <%= f.submit "編集内容を保存" %>
+
+<% end %>

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # tasks
   resources :tasks, only: [:index, :new, :create, :edit, :update]
   get '/today' => 'tasks#today'
+  delete 'task/:id' => 'tasks#destroy'
   get '/tasks/:id/complete' => 'tasks#complete'
 
 end

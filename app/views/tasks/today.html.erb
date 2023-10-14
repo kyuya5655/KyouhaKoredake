@@ -1,0 +1,25 @@
+<h3><%= @user.name %>さん</h3>
+<p>
+  お疲れさまです。<br />
+  # 今日（）のタスクは( )件です。今日はこれだけ頑張りましょう！
+</p>
+<p><%= image_tag 'あなた次第.png', size: '300x300' %>></p>
+
+<table border="1">
+  <tr align="center">
+    <th>タスク名</th>
+    <th>ステータス</th>
+    <th>ご褒美</th>
+  </tr>
+
+  <!--< @task.each do |task|>-->
+  <tr align="center">
+    <!--< task.name >-->
+    <!--< task.status >-->
+    <!--< task.present >-->
+  </tr>
+</table>
+
+<p>
+  <%= link_to "明日以降のタスクを確認するー＞", tasks_path %>
+</p>

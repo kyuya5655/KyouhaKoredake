@@ -13,22 +13,27 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg border-bottom">
-        <div class="container">
-          <%= link_to '今日はこれだけ', today_path, class:"navbar-brand" %>
-          <ul class="navbar-nav ml-auto">
-            <% if user_signed_in? %>
+        <% if user_signed_in? %>
+          <div class="container">
+            <%= link_to '今日はこれだけ', today_path, class:"navbar-brand" %>
+            <ul class="navbar-nav ml-auto">
               <li><%= link_to "ホーム", today_path, class:"navbar-brand" %></li>
               <li><%= link_to "タスク一覧", tasks_path, class:"navbar-brand" %></li>
               <li><%= link_to "タスク追加", new_task_path, class:"navbar-brand" %></li>
               <li><%= link_to "ユーザー情報", user_path, class:"navbar-brand" %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"navbar-brand" %></li>
-            <% else %>
-            <li><%= link_to "About", about_path,class:"navbar-brand" %></li>
-            <li><%= link_to "ログイン", new_user_session_path,class:"navbar-brand" %></li>
-            <li><%= link_to "新規登録", new_user_registration_path,class:"navbar-brand" %></li>
-            <% end %>
-          </ul>
-        </div>
+            </ul>
+          </div>
+        <% else %>
+          <div class="container">
+            今日はこれだけ
+            <ul class="navbar-nav ml-auto">
+              <li><%= link_to "About", about_path,class:"navbar-brand" %></li>
+              <li><%= link_to "ログイン", new_user_session_path,class:"navbar-brand" %></li>
+              <li><%= link_to "新規登録", new_user_registration_path,class:"navbar-brand" %></li>
+            </ul>
+          </div>
+        <% end %>
       </nav>
     </header>
     <%= yield %>
