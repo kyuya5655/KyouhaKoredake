@@ -3,7 +3,6 @@ class CreateTasks < ActiveRecord::Migration[6.1]
     create_table :tasks do |t|
 
       t.integer :user_id, null: false
-      t.integer :present_id, null: false
       t.string :name, null: false
       t.string :present, null: false
       t.integer :status, default: 0, null: false

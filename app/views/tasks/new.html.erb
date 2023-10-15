@@ -8,7 +8,7 @@
     <td>
       <div class="form-group">
         <label for="task_name"></label>
-        <%= f.text_field :task_name %>
+        <%= f.text_field :name %>
       </div>
     </td>
   </tr>
@@ -51,6 +51,8 @@
   </tr>
 </table>
 
-<%= f.submit "追加する" %>
+<div class="action">
+  <%= f.submit "追加する" %>
+</div>
 
 <% end %>
