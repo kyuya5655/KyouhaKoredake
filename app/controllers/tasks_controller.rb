@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   end
 
   def index
-
+    @tasks = Task.page(params[:page])
   end
 
   def create
