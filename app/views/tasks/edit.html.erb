@@ -30,7 +30,7 @@
     <td>
       <div class="form-group">
         <label for="task_present"></label>
-        <%= f.date_field :limit %>
+        <%= f.text_field :present %>
       </div>
     </td>
   </tr>
@@ -40,9 +40,12 @@
     <td>
       <div class="form-group">
         <label for="task_present"></label>
-        <%= f.text_field :note %>
-        <%= f.file_field :image, accept: "image/*" %>
+          <%= f.text_field :note %>
+      </div class="form-group">
+      <div>
+        <%= image_tag @task.get_image(300,300) %>
       </div>
+      <%= f.file_field :image, accept: "image/*" %>
     </td>
   </tr>
 
@@ -50,6 +53,6 @@
 
 <%= f.submit "変更を保存" %>
 
-<%= link_to "削除",task_path(task), method: :delete, "data-confirm" => "削除しますか？",class:"btn btn-sm btn-danger destroy_book_94226" %>
+<%= link_to "削除",task_path(@task.id), method: :delete, "data-confirm" => "削除しますか？" %>
 
 <% end %>

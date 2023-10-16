@@ -13,11 +13,11 @@
     </tr>
   </thead>
 
-<%= @tasks.each do |task| %>
+<% @tasks.each do |task| %>
   <tbody>
     <tr align="center">
-      <td><%= task.status %></td>
-      <td><%= link_to task.name, edit_task_path %></td>
+      <td><%= task.status_i18n %></td>
+      <td><%= link_to task.name, edit_task_path(task) %></td>
       <td><%= task.present %></td>
       <td><%= task.start %></td>
       <td><%= task.limit %></td>

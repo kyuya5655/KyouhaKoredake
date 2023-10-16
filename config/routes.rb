@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   # homes
   get '/about' => 'homes#about'
 
+  # tasks
+  resources :tasks, only: [:index, :new, :create, :edit, :update]
+  delete 'tasks/:id' => 'tasks#destroy'
+  get '/tasks/:id/complete' => 'tasks#complete'
+  get '/today' => 'tasks#today'
+
   # users
   get '/user' => 'users#show'
   get '/user/edit' => 'users#edit'
@@ -18,10 +24,6 @@ Rails.application.routes.draw do
   get '/user/quit_check' => 'users#quit_check'
   patch '/user/withdraw' => 'users#withdraw'
 
-  # tasks
-  resources :tasks, only: [:index, :new, :create, :edit, :update]
-  get '/today' => 'tasks#today'
-  delete 'task/:id' => 'tasks#destroy'
-  get '/tasks/:id/complete' => 'tasks#complete'
+
 
 end

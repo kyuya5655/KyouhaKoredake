@@ -2,13 +2,17 @@ class Task < ApplicationRecord
 
   belongs_to :user
 
-  has_one_attached :note_image
+  has_one_attached :image
 
-  # def get_note_image(with, height)
-  #   unless
+  enum status: { waiting: 0, started: 1, completed: 2, notcompleted: 3  }
 
-  #   end
-  # end
+  def get_image(width, height)
+    unless image.attached?
+      file_path = Rails.root.join('app/assets/images/本.png')
+      image.attach(io: File.open(file_path), filename: 'default-image.png', content_type: 'image/png')
+    end
+    image
+  end
 
   validates :name, presence: true
   validates :status, presence: true

@@ -1,4 +1,12 @@
-<h2>ログイン</h2>
+<div class='introduce'>
+  お疲れさまです。「今日はこれだけ」運営部です。<br />
+  当サイトは、<strong>タスク管理のサイト</strong>です。初めてご利用の方は<strong>About</strong>ページをご確認ください。<br />
+  ユーザー登録されている方は「ログイン」、ユーザー登録されていない方は、「新規登録」を押下し必要事項を入力してください。<br />
+</div>
+
+<div class="image">
+  <%= image_tag '名刺.png', size: '300x300' %>
+</div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
