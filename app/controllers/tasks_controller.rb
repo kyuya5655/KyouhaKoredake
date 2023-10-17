@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.page(params[:page])
+    @tasks = Task.all.order(limit: :ASC).page(params[:page]).per(5)
   end
 
   def create
@@ -32,7 +32,10 @@ class TasksController < ApplicationController
   end
 
   def today
-    @task = Task.where(start: 'today' )
+    @today = Date.today
+    @task = Task.where(limit: Date.today)
+    @task_today_counts = Task.where(limit: Date.today).count
+    @task_not_completed = Task.where(status: 'notcompleted')
   end
 
   def complete

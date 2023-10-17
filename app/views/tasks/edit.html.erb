@@ -7,6 +7,15 @@
 
 <table class="tasks" border="1" style="border-collapse: collapse">
   <tr align="center">
+    <td>ステータス</td>
+    <td>
+      <div class="form-group">
+        <label for="task_status"></label>
+        <%= f.select :status,Task.statuses.keys, class: "Task_status" %>
+      </div>
+    </td>
+  </tr>
+  <tr align="center">
     <td>開始</td>
     <td>
       <div class="form-group">
