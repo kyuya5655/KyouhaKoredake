@@ -22,7 +22,11 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(tasks_params)
-    redirect_to edit_task_path
+    if @task.status == "completed"
+      render :complete
+    else
+      redirect_to edit_task_path
+    end
   end
 
   def destroy
@@ -35,11 +39,13 @@ class TasksController < ApplicationController
     @today = Date.today
     @task = Task.where(limit: Date.today)
     @task_today_counts = Task.where(limit: Date.today).count
-    @task_not_completed = Task.where(status: 'notcompleted')
+    @user = current_user
+    @limit_over_tasks = @user.limit_over_tasks
   end
 
   def complete
-    @task = Task.find(task)
+    @task = Task.find(task.id)
+    @task_today_counts = Task.where(limit: Date.today).count
   end
 
   private

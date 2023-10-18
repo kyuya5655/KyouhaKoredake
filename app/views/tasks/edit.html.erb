@@ -1,17 +1,23 @@
 <%= form_with model: @task do |f| %>
 
-<div class="form-group">
-  <label for="task_name"></label>
-  <%= f.text_field :name %>
-</div>
+
 
 <table class="tasks" border="1" style="border-collapse: collapse">
+  <tr align="center">
+    <td>タスク名</td>
+    <td>
+      <div class="form-group">
+        <label for="task_name"></label>
+        <%= f.text_field :name %>
+      </div>
+    </td>
+  </tr>
   <tr align="center">
     <td>ステータス</td>
     <td>
       <div class="form-group">
         <label for="task_status"></label>
-        <%= f.select :status,Task.statuses.keys, class: "Task_status" %>
+        <%= f.select :status, Task.statuses_i18n.invert.to_a %>
       </div>
     </td>
   </tr>

@@ -29,14 +29,12 @@
     <th>タスク名</th>
     <th>期日</th>
   </tr>
-  <tr align="center">
+  <% @limit_over_tasks.each do |limit_over_task| %>
     <tr align="center">
-     <% @task_not_completed.each do |task_not_completed| %>
-      <td><%= link_to task.name, edit_task_path(task.id) %></td>
-      <td><%= l task.limit %></td>
-    <% end %>
-  </tr>
-  </tr>
+      <td><%= link_to limit_over_task.name, edit_task_path(limit_over_task.id) %></td>
+      <td><%= limit_over_task.limit %></td>
+    </tr>
+  <% end %>
 </table>
 
 <p>

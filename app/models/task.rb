@@ -4,7 +4,7 @@ class Task < ApplicationRecord
 
   has_one_attached :image
 
-  enum status: { waiting: 0, started: 1, completed: 2, notcompleted: 3  }
+  enum status: { waiting: 0, started: 1, completed: 2 }
 
   def get_image(width, height)
     unless image.attached?

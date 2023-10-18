@@ -1,40 +1,44 @@
+<% if  @task_today_counts == 0 %>
+  <div clss="picuture">
+    <%= image_tag "丸.png", size: '300x300' %>
+  </div>
 
-<!--残りのタスクが存在する時-->
-<div clss="picuture">
-  <%= image_tag "丸.png", size: '300x300' %>
-</div>
+  <div class="complete_introduction">
+    タスクの完了お疲れさまでした！<br />
+    ご褒美の獲得おめでとうございます！<br />
+    今日はこれだけ！あとはゆっくり過ごしましょ〜
+  </div>
 
-<div class="complete_introduction">
-  タスクの完了お疲れさまでした！<br />
-  ご褒美の獲得おめでとうございます！<br />
-  今日のタスクはあと<%= %>個です。もう少し頑張りましょう！
-</div>
+  <div class="complete">
+    <table border="1">
+      <tr align='center'>
+        <td>獲得ご褒美</td>
+        <td><%= @task.present %></td>
+      </tr>
+  </div>
 
-<div class="complete">
-  <table border="1">
-    <tr align='center'>
-      <td>獲得ご褒美</td>
-      <td><%= @task.present %></td>
-    </tr>
+<% else %>
+  <div clss="picuture">
+    <%= image_tag "丸.png", size: '300x300' %>
+  </div>
+
+    <div class="complete_introduction">
+      タスクの完了お疲れさまでした！<br />
+      ご褒美の獲得おめでとうございます！<br />
+      今日のタスクはあと<%= %>個です。もう少し頑張りましょう！
+    </div>
+    <div class="complete">
+      <table border="1">
+        <tr align='center'>
+          <td>獲得ご褒美</td>
+          <td><%= @task.present %></td>
+        </tr>
+    </div>
   </table>
-</div>
+<% end %>
 
-<!--本日分のタスクが完了した時-->
-<div clss="picuture">
-  <%= image_tag "丸.png", size: '300x300' %>
-</div>
 
-<div class="complete_introduction">
-  タスクの完了お疲れさまでした！<br />
-  ご褒美の獲得おめでとうございます！<br />
-  今日はこれだけ！あとはゆっくり過ごしましょ〜
-</div>
 
-<div class="complete">
-  <table border="1">
-    <tr align='center'>
-      <td>獲得ご褒美</td>
-      <td><%= @task.present %></td>
-    </tr>
-  </table>
+<div class="action">
+  <%= link_to "ホームへ戻る", today_path %>
 </div>
