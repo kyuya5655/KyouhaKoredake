@@ -8,6 +8,8 @@
   <%= image_tag '名刺.png', size: '300x300' %>
 </div>
 
+
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %> <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

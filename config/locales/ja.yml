@@ -1,5 +1,11 @@
 ja:
   activerecord:
+    attributes:
+      task:
+        name: タスク名
+        present: ご褒美
+        start: 開始日
+        limit: 期日
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

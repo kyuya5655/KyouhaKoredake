@@ -1,12 +1,4 @@
 ja:
-  ja:
-  enums:
-    task:
-      status:
-        waiting: "未着手"
-        started: "処理中"
-        completed: "完了"
-        notcompleted: "期限超過"
   activerecord:
     attributes:
       user:

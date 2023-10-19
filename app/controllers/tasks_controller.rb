@@ -11,8 +11,11 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(tasks_params)
     @task.user_id = current_user.id
-    @task.save
-    redirect_to today_path
+    if @task.save
+      redirect_to edit_task_path(@task.id)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -21,12 +24,15 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update!(tasks_params)
-    if @task.status == "completed"
-      @task_today_counts = Task.where(limit: Date.today).where(status: [0, 1]).count
-      render :complete
+    if @task.update(tasks_params)
+      if @task.status == "completed"
+        @task_today_counts = Task.where(limit: Date.today).where(status: [0, 1]).count
+        render :complete
+      else
+        redirect_to edit_task_path
+      end
     else
-      redirect_to edit_task_path
+      render :edit
     end
   end
 

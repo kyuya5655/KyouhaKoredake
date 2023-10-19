@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  
+ 
   def show
     @task_today_counts = Task.where(limit: Date.today).count
   end
