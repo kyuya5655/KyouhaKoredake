@@ -11,13 +11,13 @@
     <th>タスク名</th>
     <th>ご褒美</th>
   </tr>
-  <tr align="center">
-     <% @task.each do |task| %>
+  <% @task.each do |task| %>
+    <tr align="center">
       <td><%= task.status_i18n %></td>
       <td><%= link_to task.name, edit_task_path(task.id) %></td>
       <td><%= task.present %></td>
-    <% end %>
-  </tr>
+    </tr>
+   <% end %>
 </table>
 
 <div class="notcompleted_task_introduce">

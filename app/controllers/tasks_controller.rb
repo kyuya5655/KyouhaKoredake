@@ -21,8 +21,9 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(tasks_params)
+    @task.update!(tasks_params)
     if @task.status == "completed"
+      @task_today_counts = Task.where(limit: Date.today).where(status: [0, 1]).count
       render :complete
     else
       redirect_to edit_task_path
@@ -37,15 +38,15 @@ class TasksController < ApplicationController
 
   def today
     @today = Date.today
-    @task = Task.where(limit: Date.today)
-    @task_today_counts = Task.where(limit: Date.today).count
+    @task = Task.where(limit: Date.today).where(status: [0, 1])
+    @task_today_counts = Task.where(limit: Date.today).where(status: [0, 1]).count
     @user = current_user
     @limit_over_tasks = @user.limit_over_tasks
   end
 
   def complete
     @task = Task.find(task.id)
-    @task_today_counts = Task.where(limit: Date.today).count
+    @task_today_counts = Task.where(limit: Date.today).where(status: [0, 1])
   end
 
   private
