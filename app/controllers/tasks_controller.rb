@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.all.order(limit: :ASC).page(params[:page]).per(5)
+    @tasks = current_user.tasks.all.order(limit: :ASC).page(params[:page]).per(5)
   end
 
   def create
@@ -44,15 +44,14 @@ class TasksController < ApplicationController
 
   def today
     @today = Date.today
-    @task = Task.where(limit: Date.today).where(status: [0, 1])
-    @task_today_counts = Task.where(limit: Date.today).where(status: [0, 1]).count
-    @user = current_user
-    @limit_over_tasks = @user.limit_over_tasks
+    @task = current_user.tasks.where(limit: Date.today).where(status: [0, 1])
+    @task_today_counts = @task.where(limit: Date.today).where(status: [0, 1]).count
+    @limit_over_tasks = current_user.limit_over_tasks
   end
 
   def complete
-    @task = Task.find(task.id)
-    @task_today_counts = Task.where(limit: Date.today).where(status: [0, 1])
+    @task = current_user.tasks.find(task.id)
+    @task_today_counts = current_user.tasks.where(limit: Date.today).where(status: [0, 1])
   end
 
   private

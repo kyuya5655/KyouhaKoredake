@@ -61,4 +61,6 @@ gem 'kaminari','~> 1.2.1'
 
 gem 'pry-byebug'
 
-gem "enum_help"
+gem 'enum_help'
+
+gem 'chartkick'

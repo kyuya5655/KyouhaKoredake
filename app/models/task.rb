@@ -14,15 +14,12 @@ class Task < ApplicationRecord
     image
   end
 
+
   validates :name, presence: true
   validates :status, presence: true
   validates :present, presence: true
   validates :start, presence: true
 
-  # def start
-  #   return if start.blank?
-  #   errors.add(:start, "は今日以降のものを選択してください") if start < Date.today
-  # end
 
   validates :limit, presence: true
 

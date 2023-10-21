@@ -1,9 +1,21 @@
-<title>今日はこれだけ</title>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>今日はこれだけ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://kit.fontawesome.com/f9dc475c58.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<div clss="sait_name">
-  今日はこれだけ
-</div>
+  <body>
+    <div class="site_start">
+      <h1>今日はこれだけ</h1>
+      <%= link_to "始める", new_user_session_path %>
+    </div>
+  </body>
+</html>
 
-<div class="sait_start">
-  <%= link_to "始める", new_user_session_path %>
-</div>
