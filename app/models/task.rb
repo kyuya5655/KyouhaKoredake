@@ -14,8 +14,8 @@ class Task < ApplicationRecord
     image
   end
 
-  def self.search(keyword)
-    where("name LIKE ?", "#{keyword}%")
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "id", "limit", "name", "note", "present", "start", "status", "updated_at", "user_id"]
   end
 
   validates :name, presence: true

@@ -64,3 +64,5 @@ gem 'pry-byebug'
 gem 'enum_help'
 
 gem 'chartkick'
+
+gem 'ransack'

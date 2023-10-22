@@ -1,46 +1,62 @@
-<h2>About</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>今日はこれだけ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<p>
-  仕事や学校・家事・育児などなど、毎日お疲れさまでございます。<br />
-  毎日忙しいと、休日はついついダラけてしまいたくなりますよね。。。
-</p>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<p>
-  <%= image_tag 'ジョギング.png', size: '300x300' %><br />
-  （理想）
-</p>
+  <body>
+    <h2>About</h2>
+    <p class="writing">
+      仕事や学校・家事・育児などなど、毎日お疲れさまです。<br />
+      毎日忙しいと、休日はついついダラけてしまいたくなりますよね。
+　　</p>
 
-<p>
-  <%= image_tag 'ダラダラ４.png', size: '300x300' %><br />
-  （現実）
-</p>
+    <p>
+      <%= image_tag 'ジョギング.png', size: '300x300' %><br />
+      （理想）
+    </p>
 
-<p>
-  やりたい事、やらなくてはいけない事はあるけどやる気が出なくて、ダラけて過ごしてしまい、<br />
-  夜になって、やっておけばと後悔するなんて日がある方も多いのではないでしょうか？
-</p>
+    <p>
+      <%= image_tag 'ダラダラ４.png', size: '300x300' %><br />
+      （現実）
+    </p>
 
-<p class='speech-bubble'>
-  何もやってない。。。
-</p>
+    <p class="writing">
+      やりたい事、やらなくてはいけない事はあるけどやる気が出なくて、ダラけて過ごしてしまい、<br />
+      夜になって、やっておけばと後悔するなんて日がある方も多いのではないでしょうか？
+    </p>
 
-<%= image_tag '落ち込む人.png', size: '300x300' %>
+    <p class='speech-bubble'>
+      何もやってない。。。
+    </p>
 
-<p class='speech-bubble'>
-  １日無駄にしてしまった。。。
-</p>
+    <%= image_tag '落ち込む人.png', size: '300x300' %>
 
-<p>
-  そんな時このサイトを活用していただき、やりたい事、やらなくてはいけない事を整理していただければと思います。<br />
-  また自身でご褒美を設定していただく機能があります。ご褒美GET目指して頑張りましょう！<br />
-  １日に何か一つでも取り組めれば万々歳です。気楽にいきましょう〜
-</p>
+    <p class='speech-bubble'>
+      １日無駄にしてしまった。。。
+    </p>
+
+    <p class="writing">
+      そんな時このサイトを活用していただき、やりたい事、やらなくてはいけない事を整理していただければと思います。<br />
+      また自身でご褒美を設定していただく機能があります。ご褒美GET目指して頑張りましょう！<br />
+      １日に何か一つでも取り組めれば万々歳です。気楽にいきましょう〜
+    </p>
 
 
-<%= image_tag 'リラックス１.png', size: '300x300' %>
+    <%= image_tag 'リラックス１.png', size: '300x300' %>
 
-<p><%= link_to 'ログイン画面へ', new_user_session_path %></p>
+    <p><%= link_to 'ログイン画面へ', new_user_session_path %></p>
 
-<%= image_tag 'リラックス２.png', size: '300x300' %>
+    <%= image_tag 'リラックス２.png', size: '300x300' %>
 
-<p><%= link_to '新規登録画面へ', new_user_registration_path %></p>
+    <p><%= link_to '新規登録画面へ', new_user_registration_path %></p>
+    <%= yield %>
+  </body>
+</html>
+

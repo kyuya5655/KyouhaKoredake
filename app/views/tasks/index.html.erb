@@ -1,10 +1,9 @@
 <h3>タスク一覧</h3>
 
-<!--<= form_with(url: search_path, local: true, method: :get) do |f| %>-->
-<!--  <= f.text_field :keyword %>-->
-<!--  %= f.submit '検索' %>-->
-<!--% end %>-->
-
+<%= search_form_for @q, url: search_tasks_path do |f| %>
+   <%= f.search_field :name_cont, class: 'form-control', placeholder: '検索ワード' %>
+   <%= f.submit '検索', class: 'btn btn-primary' %>
+<% end %>
 
 <table class="tasks" border="1"  style="border-collapse: collapse">
 

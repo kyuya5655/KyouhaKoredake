@@ -3,19 +3,25 @@
   <head>
     <title>今日はこれだけ</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <script src="https://kit.fontawesome.com/f9dc475c58.js" crossorigin="anonymous"></script>
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <div class="site_start">
-      <h1>今日はこれだけ</h1>
-      <%= link_to "始める", new_user_session_path %>
+      <h1 class="site_name">今日はこれだけ</h1>
+      <p class="site_introduction">
+        当サイトは、<strong>タスク管理のサイト</strong>です。
+        早速始めてみましょう！<br />
+        <%= link_to "始める", new_user_session_path %>
+      </p>
     </div>
   </body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
 </html>
-

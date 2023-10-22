@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   get '/about' => 'homes#about'
 
   # tasks
-  resources :tasks, only: [:index, :new, :create, :edit, :update]
+  resources :tasks, only: [:index, :new, :create, :edit, :update] do
+  collection do
+      get 'search'
+    end
+  end
   delete 'tasks/:id' => 'tasks#destroy'
   get '/task_complete' => 'tasks#complete'
   get '/today' => 'tasks#today'
