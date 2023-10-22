@@ -6,6 +6,11 @@ class TasksController < ApplicationController
 
   def index
     @tasks = current_user.tasks.all.order(limit: :ASC).page(params[:page]).per(5)
+    if params[:keyword]
+      @tasks = @tasks.search(params[:keyword]).page(params[:page])
+    else
+      @tasks = @tasks.page(params[:page])
+    end
   end
 
   def create

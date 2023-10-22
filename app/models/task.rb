@@ -14,6 +14,9 @@ class Task < ApplicationRecord
     image
   end
 
+  def self.search(keyword)
+    where("name LIKE ?", "#{keyword}%")
+  end
 
   validates :name, presence: true
   validates :status, presence: true
