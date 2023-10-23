@@ -1,21 +1,26 @@
 <div class="container">
   <div class='row'>
-    <table class="table border table-hover table-inverse">
+    <table class="table border table-hover table-inverse" border="1"  style="border-collapse: collapse">
       <% if @result == [] %>
         <h3 class="mt-3 text-center">検索結果がありません。</h3>
       <% elsif @task_searches.present? %>
       <% search_word = @q.name_cont %>
-    <h2 class="mt-3">検索結果 "<%= search_word %>"</h2>
+      <% search_status = @q.status_eq_any.enum_for %>
+    <h2 class="mt-3">検索結果：タスク名"<%= search_word %>"、ステータス"<%= search_status %>" </h2>
       <thead>
         <tr>
-          <th>name</th>
+          <th>ステータス</th>
+          <th>タスク名</th>
+          <th>ご褒美</th>
           <th colspan="3"></th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <% @task_searches.each do |task_search| %>
-          <td><%= link_to task_search.name, task_path(task.id) %></td>
+          <td><%= task_search.status_i18n %></td>
+          <td><%= link_to task_search.name, edit_task_path(task_search.id) %></td>
+          <td><%= task_search.present %></td>
         </tr>
         <% end %>
       <% else %>
@@ -23,4 +28,6 @@
       <% end %>
     </table>
   </div>
+
 </div>
+

@@ -18,6 +18,10 @@ class Task < ApplicationRecord
     ["created_at", "id", "limit", "name", "note", "present", "start", "status", "updated_at", "user_id"]
   end
 
+  def self.ransackable_associations(auth_object = nil)
+    ["image_attachment", "image_blob", "user"]
+  end
+
   validates :name, presence: true
   validates :status, presence: true
   validates :present, presence: true

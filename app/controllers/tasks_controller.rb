@@ -7,12 +7,12 @@ class TasksController < ApplicationController
   def index
     @tasks = current_user.tasks.all.order(limit: :ASC).page(params[:page]).per(5)
     @q = Task.ransack(params[:q])
-    @task_searches = @q.result(distinct: true).includes(:task).page(params[:page]).order(limit: :ASC)
-    @result = params[:q]&.values&.reject(&blank?)
   end
 
   def search
-
+    @q = Task.ransack(params[:q])
+    @task_searches = @q.result(distinct: true).page(params[:page]).order(limit: :ASC)
+    @result = params[:q]&.values&.reject(&:blank?)
   end
 
   def create

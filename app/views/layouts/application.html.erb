@@ -12,10 +12,10 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg border-bottom">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <% if user_signed_in? %>
           <div class="container">
-            <%= link_to '今日はこれだけ', today_path, class:"navbar-brand" %>
+            <%= link_to '今日はこれだけ', today_path,class:"navbar-brand" %>
             <ul class="navbar-nav ml-auto">
               <li><%= link_to "ホーム", today_path, class:"navbar-brand" %></li>
               <li><%= link_to "タスク一覧", tasks_path, class:"navbar-brand" %></li>
@@ -36,10 +36,6 @@
         <% end %>
       </nav>
     </header>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <%= yield %>
   </body>
 </html>
