@@ -10,6 +10,10 @@ body {
   font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
 }
 
+h2 {
+  font-size: 50px;
+}
+
 .container{
   width: 100%;
   max-width: 960px;
@@ -17,6 +21,7 @@ body {
   margin-left: auto;
 }
 
+//top
 .site_start{
   margin: 0;
   text-align: center;
@@ -29,4 +34,23 @@ body {
 
 .site_name {
   text-decoration: underline;
+  line-height: 1.5em;
+}
+
+.site_introduction {
+  line-height: 1.5em;
+}
+
+// about
+.about {
+  text-align: center;
+  text-decoration: underline;
+  line-height: 1.5em;
+}
+
+.writing {
+  text-align: center;
+}
+
+.image {
 }

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>今日はこれだけ</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,19 +12,21 @@
   </head>
 
   <body>
-    <h2 class="About">About</h2>
+    <div class="conteiner">
+
+    <h2 class="about">About</h2>
     <p class="writing">
       仕事や学校・家事・育児などなど、毎日お疲れさまです。<br />
       毎日忙しいと、休日はついついダラけてしまいたくなりますよね。
 　　</p>
 
-    <p class="image_ideal" >
-      <%= image_tag 'ジョギング.png', size: '300x300' %><br />
+    <p class="image">
+      <%= image_tag 'ジョギング.jpg' %><br />
       （理想）
     </p>
 
-    <p class="image_reality">
-      <%= image_tag 'ダラダラ４.png', size: '300x300' %><br />
+    <p class="image">
+      <%= image_tag 'ダラダラ４.jpg' %><br />
       （現実）
     </p>
 
@@ -36,7 +39,7 @@
       何もやってない。。。
     </p>
 
-    <%= image_tag '落ち込む人.png', size: '300x300' %>
+    <%= image_tag '落ち込む人.jpg' %>
 
     <p class='speech-bubble'>
       １日無駄にしてしまった。。。
@@ -49,14 +52,15 @@
     </p>
 
 
-    <%= image_tag 'リラックス１.png', size: '300x300' %>
+    <%= image_tag 'リラックス１.jpg' %>
 
     <p><%= link_to 'ログイン画面へ', new_user_session_path %></p>
 
-    <%= image_tag 'リラックス２.png', size: '300x300' %>
+    <%= image_tag 'リラックス２.jpg' %>
 
     <p><%= link_to '新規登録画面へ', new_user_registration_path %></p>
-    <%= yield %>
+    </div>
   </body>
+  <%= yield %>
 </html>
 

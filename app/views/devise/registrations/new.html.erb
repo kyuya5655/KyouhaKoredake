@@ -1,5 +1,16 @@
 <h2>新規登録</h2>
 
+<div class='introduce'>
+  お疲れさまです。「今日はこれだけ」運営部です。<br />
+  当サイトは、<strong>タスク管理のサイト</strong>です。初めてご利用の方は<strong>About</strong>ページをご確認ください。<br />
+  必要事項をご記入の上、「新規登録」をお願いいたします。<br />
+</div>
+
+<div class="image">
+  <%= image_tag '名刺.jpg' %>
+</div>
+
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -32,9 +43,7 @@
 <% end %>
 
 <p>
-  アカウントをお持ちの方は
+  ユーザー登録ずみの方は
   <%= link_to 'こちら', new_user_session_path %>
   から
 </p>
-
-<!--<= render "devise/shared/links" %>-->
