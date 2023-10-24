@@ -6,23 +6,23 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <h2>About</h2>
+    <h2 class="About">About</h2>
     <p class="writing">
       仕事や学校・家事・育児などなど、毎日お疲れさまです。<br />
       毎日忙しいと、休日はついついダラけてしまいたくなりますよね。
 　　</p>
 
-    <p>
+    <p class="image_ideal" >
       <%= image_tag 'ジョギング.png', size: '300x300' %><br />
       （理想）
     </p>
 
-    <p>
+    <p class="image_reality">
       <%= image_tag 'ダラダラ４.png', size: '300x300' %><br />
       （現実）
     </p>
