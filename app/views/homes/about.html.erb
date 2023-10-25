@@ -13,54 +13,58 @@
 
   <body>
     <div class="conteiner">
-
-    <h2 class="about">About</h2>
-    <p class="writing">
-      仕事や学校・家事・育児などなど、毎日お疲れさまです。<br />
-      毎日忙しいと、休日はついついダラけてしまいたくなりますよね。
-　　</p>
-
-    <p class="image">
-      <%= image_tag 'ジョギング.jpg' %><br />
-      （理想）
-    </p>
-
-    <p class="image">
-      <%= image_tag 'ダラダラ４.jpg' %><br />
-      （現実）
-    </p>
-
-    <p class="writing">
-      やりたい事、やらなくてはいけない事はあるけどやる気が出なくて、ダラけて過ごしてしまい、<br />
-      夜になって、やっておけばと後悔するなんて日がある方も多いのではないでしょうか？
-    </p>
-
-    <p class='speech-bubble'>
-      何もやってない。。。
-    </p>
-
-    <%= image_tag '落ち込む人.jpg' %>
-
-    <p class='speech-bubble'>
-      １日無駄にしてしまった。。。
-    </p>
-
-    <p class="writing">
-      そんな時このサイトを活用していただき、やりたい事、やらなくてはいけない事を整理していただければと思います。<br />
-      また自身でご褒美を設定していただく機能があります。ご褒美GET目指して頑張りましょう！<br />
-      １日に何か一つでも取り組めれば万々歳です。気楽にいきましょう〜
-    </p>
-
-
-    <%= image_tag 'リラックス１.jpg' %>
-
-    <p><%= link_to 'ログイン画面へ', new_user_session_path %></p>
-
-    <%= image_tag 'リラックス２.jpg' %>
-
-    <p><%= link_to '新規登録画面へ', new_user_registration_path %></p>
+      <h2 class="about">About</h2>
     </div>
-  </body>
+    <div>
+      <p class="writing">
+       仕事や学校・家事・育児などなど、毎日お疲れさまです。<br />
+       毎日忙しいと、休日はついついダラけてしまいたくなりますよね。
+　　  </p>
+    </div>
+　　<div class="introduction">
+　　  <p class="ideal">
+        <%= image_tag 'ジョギング.jpg', size: '300x300' %><br />
+        （理想）
+      </p>
+　　  <p class="reality">
+        <%= image_tag 'ダラダラ４.jpg', size: '300x300' %><br />
+       （現実）
+      </p>
+　　</div>
+　　<div class="introduction">
+       <p class="writing">
+        やりたい事、やらなくてはいけない事はあるけどやる気が出なくて、ダラけて過ごしてしまい、<br />
+        夜になって、やっておけばと後悔するなんて日がある方も多いのではないでしょうか？
+       </p>
+　　</div>
+    <div class="introduction">
+        <p class='speech-bubble1'>
+         何もやってない。。。
+        </p>
+        <p><%= image_tag '落ち込む人.jpg', size: '300x300' %></p>
+        <p class='speech-bubble2'>
+         １日無駄にしてしまった。。。
+        </p>
+    </div>
+    <div class="introduction">
+        <p class="writing">
+         そんな時このサイトを活用していただき、やりたい事、やらなくてはいけない事を整理していただければと思います。<br />
+         また自身でご褒美を設定していただく機能があります。ご褒美GET目指して頑張りましょう！<br />
+         １日に何か一つでも取り組めれば万々歳です。気楽にいきましょう〜
+        </p>
+    </div>
+
+　　<div class="introduction">
+　　     <p class="login" >
+           <%= image_tag 'リラックス１.jpg', size: '300x300' %><br />
+           <%= link_to 'ログイン画面へ', new_user_session_path %>
+         </p>
+　　     <p class="sign_up">
+           <%= image_tag 'リラックス２.jpg', size: '300x300' %><br />
+           <%= link_to '新規登録画面へ', new_user_registration_path %>
+         </p>
+　　</div>
+ </body>
   <%= yield %>
 </html>
 

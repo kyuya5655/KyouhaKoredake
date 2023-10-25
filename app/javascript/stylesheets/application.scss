@@ -12,6 +12,11 @@ body {
 
 h2 {
   font-size: 50px;
+  margin-bottom: 20px
+}
+
+p {
+  font-size: 25px;
 }
 
 .container{
@@ -35,10 +40,12 @@ h2 {
 .site_name {
   text-decoration: underline;
   line-height: 1.5em;
+  margin-bottom: 20px
 }
 
 .site_introduction {
   line-height: 1.5em;
+  margin-bottom: 20px
 }
 
 // about
@@ -46,11 +53,36 @@ h2 {
   text-align: center;
   text-decoration: underline;
   line-height: 1.5em;
+  margin-bottom: 20px
 }
 
 .writing {
   text-align: center;
 }
 
-.image {
+.introduction {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 20px
 }
+
+.speech-bubble1 {
+  padding: 10px 20px;
+  color: #000;
+  position: relative;
+  display: inline-block;
+}
+
+.speech-bubble1::before {
+  content: "";
+  position: absolute;
+  border-bottom: 70px;
+  border-right: 40px;
+  width: 0;
+  height: 0;
+  right: 30px;
+  bottom: 100px;
+}
+
+// nav
