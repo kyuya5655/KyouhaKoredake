@@ -67,22 +67,43 @@ p {
   margin-bottom: 20px
 }
 
-.speech-bubble1 {
-  padding: 10px 20px;
-  color: #000;
+.speech-bubble-left {
   position: relative;
+  padding: 20px;
+  border: 2px solid #000;
+  background-color: #EEEEEE;
   display: inline-block;
+  height: 50%;
+  border-radius: 10px;
 }
 
-.speech-bubble1::before {
+.speech-bubble-left::before {
   content: "";
   position: absolute;
-  border-bottom: 70px;
-  border-right: 40px;
-  width: 0;
-  height: 0;
-  right: 30px;
-  bottom: 100px;
+  top: 80%;
+  left: 90%;
+  border: 10px solid transparent;
+  border-top: 50px solid #EEEEEE;
+  transform: rotate(310deg)
 }
 
-// nav
+
+.speech-bubble-right {
+  position: relative;
+  padding: 20px;
+  border: 2px solid #000;
+  background-color: #EEEEEE;
+  display: inline-block;
+  height: 50%;
+  border-radius: 10px;
+}
+
+.speech-bubble-right::before {
+  content: "";
+  position: absolute;
+  top: 80%;
+  right: 80%;
+  border: 10px solid transparent;
+  border-top: 50px solid #EEEEEE;
+  transform: rotate(40deg)
+}
