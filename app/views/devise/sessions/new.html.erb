@@ -1,16 +1,30 @@
-<h2 class="head">ログイン</h2>
+<h2 class="headline">ログイン</h2>
 
-<div class='introduce'>
-  <p >
-    お疲れさまです。「今日はこれだけ」運営部です。<br />
-    必要事項を入力し、ログインをお願いします！
-  </p>
-
+<div class="conteiner">
+  <div class="row">
+    <div class="col-md-8">
+      <p class="login_item">
+        お疲れさまです。「今日はこれだけ」運営部です。<br />
+        必要事項をご記入の上、ログインをお願いします！
+      </p>
+    </div>
+    <div class="col-md-4">
+      <%= image_tag '名刺.jpg', size: '300x300' %>
+    </div>
+  </div>
 </div>
 
-<div class="image">
-  <%= image_tag '名刺.jpg', size:'300x300' %>
-</div>
+
+
+
+<% if @user.errors.any? %>
+  <%= @task.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @task.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -39,3 +53,5 @@
   <%= link_to "こちら", new_user_registration_path %>
   から
 </p>
+
+<!--<= render "devise/shared/links" %>-->
