@@ -1,21 +1,23 @@
 <h2>新規登録</h2>
 
-<div>
-  当サイトは、<strong>タスク管理のサイト</strong>です。初めてご利用の方は<strong>About</strong>ページをご確認ください。<br />
-  必要事項をご記入の上、「新規登録」をお願いいたします。<br />
-</div>
+<div class="conteiner">
+  <p class="signin_item">
+    当サイトは、<span class="marker">タスク管理のサイト</span>です。初めてご利用の方は<span class="marker">About</span>ページをご確認ください。<br />
+    必要事項をご記入の上、<span class="marker">「新規登録」</span>をお願いいたします。<br />
+  </p>
 
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <p class="error_messages">
+    <%= render "devise/shared/error_messages", resource: resource %>
+  </p>
 
   <div class="field">
-    <%= f.label "User名" %>
+    <%= f.label "ユーザー名" %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %>
+    <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -23,22 +25,23 @@
     <%= f.label :password %>
     <% if @minimum_password_length %>
     (<%= @minimum_password_length %> 文字以上)
-    <% end %>
+    <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "新規登録" %>
+  <div class="field">
+    <%= f.submit "新規登録", class: "btn btn-info" %>
   </div>
-<% end %>
+  <% end %>
+</div>
 
-<p>
-  ユーザー登録ずみの方は
+<p class="log_in">
+  ユーザー登録済みの方は
   <%= link_to 'こちら', new_user_session_path %>
   から
 </p>

@@ -1,38 +1,26 @@
 <h2 class="headline">ログイン</h2>
 
 <div class="conteiner">
-  <div class="row">
-    <div class="col-md-8">
       <p class="login_item">
-        お疲れさまです。「今日はこれだけ」運営部です。<br />
-        必要事項をご記入の上、ログインをお願いします！
+        お疲れさまです！<br />
+        必要事項をご記入の上、<span class="marker">「ログイン」</span>をお願いします！
       </p>
-    </div>
-    <div class="col-md-4">
-      <%= image_tag '名刺.jpg', size: '300x300' %>
-    </div>
-  </div>
 </div>
 
-
-
-
-<% if @user.errors.any? %>
-  <%= @task.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @task.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+<p class="error_messages">
+    <%= render "devise/shared/error_messages", resource: resource %>
+</p>
+
   <div class="field">
-    <%= f.label :email %> <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %> <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password", required: true %>
   </div>
 
    <% if devise_mapping.rememberable? %>
@@ -43,12 +31,12 @@
       </div>
       <% end %>
 
-  <div class="actions">
-    <%= f.submit "ログイン" %>
+  <div class="field">
+    <%= f.submit "ログイン", class: "btn btn-info" %>
   </div>
 <% end %>
 
-<p>
+<p class="sign_in">
   アカウントをお持ちでない方は
   <%= link_to "こちら", new_user_registration_path %>
   から

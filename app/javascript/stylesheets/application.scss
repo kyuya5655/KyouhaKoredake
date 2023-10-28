@@ -8,15 +8,8 @@
 
 body {
   font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
-}
-
-h2 {
-  font-size: 50px;
-  margin-bottom: 20px
-}
-
-p {
-  font-size: 25px;
+  line-height: 2.0em;
+  text-align: center;
 }
 
 .container{
@@ -26,8 +19,26 @@ p {
   margin-left: auto;
 }
 
-//top
-.site_start{
+h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
+
+.marker {
+  background: linear-gradient(transparent 0, #FF0 0);
+}
+
+.error_message {
+  color: red;
+}
+
+.errors {
+  color: red;
+}
+
+// top
+.site_start {
   margin: 0;
   text-align: center;
   position: absolute;
@@ -38,87 +49,37 @@ p {
 }
 
 .site_name {
-  text-decoration: underline;
-  line-height: 1.5em;
-  margin-bottom: 20px
-}
-
-.site_introduction {
-  line-height: 1.5em;
-  margin-bottom: 20px
+  margin-bottom: 30px;
 }
 
 // about
-.about {
-  text-align: center;
-  text-decoration: underline;
-  line-height: 1.5em;
-  margin-bottom: 20px
-}
-
-.writing {
-  text-align: center;
-}
-
 .introduction {
   display: flex;
   text-align: center;
   justify-content: center;
-  margin-bottom: 20px
 }
 
-.speech-bubble-left {
-  position: relative;
-  padding: 20px;
-  border: 2px solid #000;
-  background-color: #EEEEEE;
-  display: inline-block;
-  height: 50%;
-  border-radius: 10px;
+// task_today
+.today_item {
+  margin-top: 20px;
 }
 
-.speech-bubble-left::before {
-  content: "";
-  position: absolute;
-  top: 80%;
-  left: 90%;
-  border: 10px solid transparent;
-  border-top: 50px solid #EEEEEE;
-  transform: rotate(310deg)
+.tasks, th, td {
+        border: 1px solid black;
+    }
+    table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    th.width30 {
+        width: 30%;
+    }
+
+.notcompleted_task_introduce {
+  margin-top: 30px;
 }
 
-
-.speech-bubble-right {
-  position: relative;
-  padding: 20px;
-  border: 2px solid #000;
-  background-color: #EEEEEE;
-  display: inline-block;
-  height: 50%;
-  border-radius: 10px;
-}
-
-.speech-bubble-right::before {
-  content: "";
-  position: absolute;
-  top: 80%;
-  right: 80%;
-  border: 10px solid transparent;
-  border-top: 50px solid #EEEEEE;
-  transform: rotate(40deg)
-}
-
-// nav
-.nav {
-  font-size: 40px;
-}
-
-// log_in
-.headline {
-  text-align: center;
-  text-decoration: underline;
-}
-
-.login_item {
-  text-align: center;
+.action_index {
+  text-align: right;
 }

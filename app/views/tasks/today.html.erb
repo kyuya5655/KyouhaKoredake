@@ -1,42 +1,47 @@
-<h3><%= current_user.name %>さん</h3>
-<p>
-  お疲れさまです。<br />
-  今日（<%= l @today, format: :short %>）のタスクは( <%= @task_today_counts %> )件です。今日はこれだけ頑張りましょう！
-</p>
-<p><%= image_tag 'あなた次第.jpg', size: '300x300' %></p>
+<h2 class="headlin">TODAY</h2>
+<div class="container">
+    <h3 class="user_name"><%= current_user.name %>さん</h3>
+      <p class="today_item">
+        お疲れさまです。<br />
+        今日（<%= l @today, format: :short %>）のタスクは<span class="marker">( <%= @task_today_counts %> )件</span>です。今日はこれだけ頑張りましょう！
+      </p>
+      <div class="tasks_today">
+        <table class="tasks">
+          <tr>
+            <th class="width30">ステータス</th>
+            <th class="width30">タスク名</th>
+            <th class="width30">ご褒美</th>
+          </tr>
+          <% @task.each do |task| %>
+            <tr>
+              <td><%= task.status_i18n %></td>
+              <td><%= link_to task.name, edit_task_path(task.id) %></td>
+              <td><%= task.present %></td>
+            </tr>
+           <% end %>
+        </table>
+      </div>
 
-<table class="tasks" border="1"  style="border-collapse: collapse">
-  <tr align="center">
-    <th>ステータス</th>
-    <th>タスク名</th>
-    <th>ご褒美</th>
-  </tr>
-  <% @task.each do |task| %>
-    <tr align="center">
-      <td><%= task.status_i18n %></td>
-      <td><%= link_to task.name, edit_task_path(task.id) %></td>
-      <td><%= task.present %></td>
-    </tr>
-   <% end %>
-</table>
+      <div class="notcompleted_task_introduce">
+        未完了タスクがございます。。。ご確認ください！m(_ _)m
+      </div>
 
-<div class="notcompleted_task_introduce">
-  未完了タスクがございます。。。ご確認ください！m(_ _)m
+      <table class="tasks" border="1"  style="border-collapse: collapse">
+        <tr>
+          <th>ステータス</th>
+          <th>タスク名</th>
+          <th>期日</th>
+        </tr>
+        <% @limit_over_tasks.each do |limit_over_task| %>
+          <tr align="center">
+            <td><%= limit_over_task.status_i18n %></td>
+            <td><%= link_to limit_over_task.name, edit_task_path(limit_over_task.id) %></td>
+            <td><%= limit_over_task.limit %></td>
+          </tr>
+        <% end %>
+      </table>
+      <p class="action_index">
+        <%= link_to "明日以降のタスクを確認するー＞", tasks_path %>
+      </p>
+
 </div>
-
-<table class="tasks" border="1"  style="border-collapse: collapse">
-  <tr align="center">
-    <th>タスク名</th>
-    <th>期日</th>
-  </tr>
-  <% @limit_over_tasks.each do |limit_over_task| %>
-    <tr align="center">
-      <td><%= link_to limit_over_task.name, edit_task_path(limit_over_task.id) %></td>
-      <td><%= limit_over_task.limit %></td>
-    </tr>
-  <% end %>
-</table>
-
-<p>
-  <%= link_to "明日以降のタスクを確認するー＞", tasks_path %>
-</p>
