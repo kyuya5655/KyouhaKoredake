@@ -28,9 +28,9 @@
       <div class="tasks_nocompleted">
         <table class="tasks">
           <tr>
-            <th>ステータス</th>
-            <th>タスク名</th>
-            <th>期日</th>
+            <th class="width30">ステータス</th>
+            <th class="width30">タスク名</th>
+            <th class="width30">期日</th>
           </tr>
           <% @limit_over_tasks.each do |limit_over_task| %>
             <tr align="center">
@@ -41,7 +41,7 @@
           <% end %>
         </table>
       </div>
-      
+
 
       <p class="action_index">
         <%= link_to "明日以降のタスクを確認するー＞", tasks_path %>

@@ -59,7 +59,7 @@ h2 {
   justify-content: center;
 }
 
-// task.today
+// today_task
 .today_item {
   margin-top: 20px;
 }
@@ -84,7 +84,7 @@ h2 {
   text-align: right;
 }
 
-// task.new
+// new.task
 .new_task,td {
         border: 1px solid black;
     }
@@ -101,8 +101,8 @@ h2 {
         width: 80%;
     }
 
-// task.edit
-.edit_task {
+// edit.task
+.edit_task,td {
         border: 1px solid black;
     }
     table {
@@ -117,4 +117,30 @@ h2 {
     td.width80 {
         width: 80%;
     }
-    
+
+// index.task
+.search {
+  margin-bottom: 10px;
+}
+
+.index_task, th, td {
+        border: 1px solid black;
+    }
+    table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    th.width30 {
+        width: 30%;
+    }
+
+.pagenation_tag {
+  margin-top: 20px;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+// present.task

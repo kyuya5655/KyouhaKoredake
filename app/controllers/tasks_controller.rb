@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = current_user.tasks.all.order(limit: :ASC).page(params[:page]).per(5)
+    @tasks = current_user.tasks.all.order(limit: :ASC).page(params[:page])
     @q = Task.ransack(params[:q])
   end
 

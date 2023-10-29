@@ -8,7 +8,7 @@ class Task < ApplicationRecord
 
   def get_image(width, height)
     unless image.attached?
-      file_path = Rails.root.join('app/assets/images/本.jpg')
+      file_path = Rails.root.join('app/assets/images/本.png')
       image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpg')
     end
     image

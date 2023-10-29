@@ -1,35 +1,39 @@
-<h3>タスク一覧</h3>
+<h2 class="headline">タスク一覧</h2>
 
-<%= search_form_for @q, url: search_tasks_path do |f| %>
-   <%= f.search_field :name_cont, class: 'form-control', placeholder: '検索ワード', required: true %>
-   <%= f.select :status_eq_any, Task.statuses.keys.map.with_index { |k, i| [t("enums.task.status.#{k}"), i] } %>
-      <%= f.submit '検索', class: 'btn btn-primary' %>
-    <% end %>
+<div class="container">
+    <div class="search">
+      <%= search_form_for @q, url: search_tasks_path do |f| %>
+        <%= f.search_field :name_cont, placeholder: '検索ワード', required: true %>
+        <%= f.select :status_eq_any, Task.statuses.keys.map.with_index { |k, i| [t("enums.task.status.#{k}"), i] } %>
+        <%= f.submit '検索', class: 'btn btn-info' %>
+      <% end %>
+  </div>
 
-<table class="table table-striped">
+  <table class="index_task">
 
-  <thead>
-    <tr align="center">
-      <th>ステータス</th>
-      <th>タスク名</th>
-      <th>ご褒美</th>
-      <th>開始</th>
-      <th>期限</th>
-    </tr>
-  </thead>
+    <thead>
+      <tr>
+        <th class="width30">ステータス</th>
+        <th class="width30">タスク名</th>
+        <th class="width30">ご褒美</th>
+        <th class="width30">開始</th>
+        <th class="width30">期限</th>
+      </tr>
+    </thead>
 
-<% @tasks.each do |task| %>
-  <tbody>
-    <tr align="center">
-      <td><%= task.status_i18n %></td>
-      <td><%= link_to task.name, edit_task_path(task) %></td>
-      <td><%= task.present %></td>
-      <td><%= task.start %></td>
-      <td><%= task.limit %></td>
-    </tr>
-  </tbody>
-<% end %>
-
-</table>
-
-<%= paginate @tasks %>
+  <% @tasks.each do |task| %>
+    <tbody>
+      <tr>
+        <td><%= task.status_i18n %></td>
+        <td><%= link_to task.name, edit_task_path(task) %></td>
+        <td><%= task.present %></td>
+        <td><%= task.start %></td>
+        <td><%= task.limit %></td>
+      </tr>
+    </tbody>
+  <% end %>
+  </table>
+  <div class="pagenation_tag">
+    <%= paginate @tasks %>
+  </div>
+</div>
