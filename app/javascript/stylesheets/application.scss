@@ -30,11 +30,11 @@ h2 {
 }
 
 .error_message {
-  color: red;
+  color: #F00;
 }
 
 .errors {
-  color: red;
+  color: #F00;
 }
 
 // top
@@ -59,7 +59,7 @@ h2 {
   justify-content: center;
 }
 
-// task_today
+// task.today
 .today_item {
   margin-top: 20px;
 }
@@ -83,3 +83,38 @@ h2 {
 .action_index {
   text-align: right;
 }
+
+// task.new
+.new_task,td {
+        border: 1px solid black;
+    }
+    table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    td.width20 {
+        width: 20%;
+    }
+
+    td.width80 {
+        width: 80%;
+    }
+
+// task.edit
+.edit_task {
+        border: 1px solid black;
+    }
+    table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    td.width20 {
+        width: 20%;
+    }
+
+    td.width80 {
+        width: 80%;
+    }
+    

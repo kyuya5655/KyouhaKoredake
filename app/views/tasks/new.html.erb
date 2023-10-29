@@ -1,67 +1,76 @@
-<h3>タスク追加</h3>
+<h2 class="headline">タスク追加</h2>
 
-<% if @task.errors.any? %>
-  <%= @task.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @task.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="container">
+  <div class="error">
+    <% if @task.errors.any? %>
+    <h2 class="error_message">
+      <%= @task.errors.count %>件のエラーが発生しました。
+    </h2>
 
-<%= form_with model: @task do |f| %>
+      <div class="errors">
+        <ul>
+          <% @task.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+  </div>
 
-<table border="1" style="border-collapse: collapse">
-  <tr align='center'>
-    <td>タスク名</td>
-    <td>
-      <div class="form-group">
-        <label for="task_name"></label>
-        <%= f.text_field :name %>
-      </div>
-    </td>
-  </tr>
-  <tr align='center'>
-    <td>開始</td>
-    <td>
-      <div class="form-group">
-        <label for="start"></label>
-        <%= f.date_field :start, class:"order-date-form", min: Date.current %>
-      </div>
-    </td>
-  </tr>
-  <tr align='center'>
-    <td>期限</td>
-    <td>
-      <div class="form-group">
-        <label for="limit"></label>
-        <%= f.date_field :limit, class:"order-date-form", min: Date.current %>
-      </div>
-    </td>
-  </tr>
-  <tr align='center'>
-    <td>ご褒美</td>
-    <td>
-      <div class="form-group">
-        <label for="present"></label>
-        <%= f.text_field :present %>
-      </div>
-    </td>
-  </tr>
-  <tr align='center'>
-    <td>メモ</td>
-    <td>
-      <div class="form-group">
-        <label for="limit"></label>
-        <%= f.text_field :note%>
-        <%= f.file_field :image, accept: "image/*" %>
-      </div>
-    </td>
-  </tr>
-</table>
+  <%= form_with model: @task do |f| %>
 
-<div class="action">
-  <%= f.submit "追加する" %>
+  <table clas="new_task">
+    <tr>
+      <td class="width20">タスク名</td>
+      <td class="width80">
+        <div class="form-group">
+          <label for="task_name"></label>
+          <%= f.text_field :name %>
+        </div>
+      </td>
+    </tr>
+    <tr align='center'>
+      <td class="width20">開始</td>
+      <td class="width80">
+        <div class="form-group">
+          <label for="start"></label>
+          <%= f.date_field :start, class:"order-date-form", min: Date.current %>
+        </div>
+      </td>
+    </tr>
+    <tr align='center'>
+      <td class="width20">期限</td>
+      <td class="width80">
+        <div class="form-group">
+          <label for="limit"></label>
+          <%= f.date_field :limit, class:"order-date-form", min: Date.current %>
+        </div>
+      </td>
+    </tr>
+    <tr align='center'>
+      <td class="width20">ご褒美</td>
+      <td class="width80">
+        <div class="form-group">
+          <label for="present"></label>
+          <%= f.text_field :present %>
+        </div>
+      </td>
+    </tr>
+    <tr align='center'>
+      <td class="width20">メモ</td>
+      <td class="width80">
+        <div class="form-group">
+          <label for="limit"></label>
+          <%= f.text_field :note%><br />
+          <%= f.file_field :image, accept: "image/*" %>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="field">
+    <%= f.submit "タスク追加", class: "btn btn-info" %>
+  </div>
+
+  <% end %>
 </div>
-
-<% end %>

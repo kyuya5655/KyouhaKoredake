@@ -25,21 +25,24 @@
       <div class="notcompleted_task_introduce">
         未完了タスクがございます。。。ご確認ください！m(_ _)m
       </div>
-
-      <table class="tasks" border="1"  style="border-collapse: collapse">
-        <tr>
-          <th>ステータス</th>
-          <th>タスク名</th>
-          <th>期日</th>
-        </tr>
-        <% @limit_over_tasks.each do |limit_over_task| %>
-          <tr align="center">
-            <td><%= limit_over_task.status_i18n %></td>
-            <td><%= link_to limit_over_task.name, edit_task_path(limit_over_task.id) %></td>
-            <td><%= limit_over_task.limit %></td>
+      <div class="tasks_nocompleted">
+        <table class="tasks">
+          <tr>
+            <th>ステータス</th>
+            <th>タスク名</th>
+            <th>期日</th>
           </tr>
-        <% end %>
-      </table>
+          <% @limit_over_tasks.each do |limit_over_task| %>
+            <tr align="center">
+              <td><%= limit_over_task.status_i18n %></td>
+              <td><%= link_to limit_over_task.name, edit_task_path(limit_over_task.id) %></td>
+              <td><%= limit_over_task.limit %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+      
+
       <p class="action_index">
         <%= link_to "明日以降のタスクを確認するー＞", tasks_path %>
       </p>
