@@ -37,6 +37,19 @@ h2 {
   color: #F00;
 }
 
+.text_note {
+  width: 20vw;
+  height: 30vh;
+}
+
+.text_string {
+  width: 20vw;
+}
+
+.usertext {
+  width: 20vw;
+}
+
 // top
 .site_start {
   margin: 0;
@@ -80,7 +93,7 @@ h2 {
   margin-top: 30px;
 }
 
-.action_index {
+.action {
   text-align: right;
 }
 
@@ -143,4 +156,64 @@ h2 {
   justify-content: center;
 }
 
-// present.task
+// search_task
+.search_task {
+  text-align: center;
+}
+
+.search_word {
+  text-align: center;
+}
+
+// complete.task
+.complete_item {
+  margin-bottom: 30px;
+}
+
+.complete_task,td {
+        border: 1px solid black;
+    }
+    table {
+        table-layout: fixed;
+        width: 100%;
+        text-align: center;
+    }
+
+    td.present {
+      background-color: #FF0;
+    }
+
+// show.user
+.edit_uer {
+  margin-bottom: 30px;
+}
+
+.user,td {
+        border: 1px solid black;
+    }
+    table {
+        table-layout: fixed;
+        width: 100%;
+        text-align: center;
+    }
+
+    td.width30 {
+      width: 30%;
+    }
+
+    td.width70 {
+      width: 70%;
+    }
+
+// edit_user
+.update {
+  margin-top: 30px;
+}
+
+// quit_check
+.quit_cheak {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+

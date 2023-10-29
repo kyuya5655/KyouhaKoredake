@@ -1,44 +1,50 @@
-<% if  @task_today_counts == 0 %>
-  <div clss="picuture">
-    <%= image_tag "丸.jpg", size: '300x300' %>
-  </div>
+<h2 class="headline">タスク達成！</h2>
 
-  <div class="complete_introduction">
-    タスクの完了お疲れさまでした！<br />
-    ご褒美の獲得おめでとうございます！<br />
-    今日はこれだけ！あとはゆっくり過ごしましょ〜
-  </div>
+<div class="container">
+  <% if  @task_today_counts == 0 %>
+    <div clss="picuture">
+      <%= image_tag "社長.jpg", size: '300x300' %>
+    </div>
 
-  <div class="complete">
-    <table border="1">
-      <tr align='center'>
-        <td>獲得ご褒美</td>
-        <td><%= @task.present %></td>
-      </tr>
-  </div>
-
-<% else %>
-  <div clss="picuture">
-    <%= image_tag "丸.jpg", size: '300x300' %>
-  </div>
-
-    <div class="complete_introduction">
+    <div class="complete_item">
       タスクの完了お疲れさまでした！<br />
       ご褒美の獲得おめでとうございます！<br />
-      今日のタスクはあと<%= @task_today_counts %>個です。もう少し頑張りましょう！
+      <span class="marker">今日はこれだけ！</span>あとはゆっくり過ごしましょ〜
     </div>
-    <div class="complete">
-      <table border="1">
-        <tr align='center'>
-          <td>獲得ご褒美</td>
-          <td><%= @task.present %></td>
+
+    <div class="complete_task">
+      <table class="complete_task">
+        <tr>
+          <td class="present">獲得ご褒美</td>
+          <td class="present"><%= @task.present %></td>
         </tr>
+      </table>
     </div>
-  </table>
-<% end %>
 
 
 
-<div class="action">
-  <%= link_to "ホームへ戻る", today_path %>
+  <% else %>
+    <div clss="picuture">
+      <%= image_tag "丸.jpg", size: '300x300' %>
+    </div>
+
+      <div class="complete_item">
+        タスクの完了お疲れさまでした！<br />
+        ご褒美の獲得おめでとうございます！<br />
+        今日のタスクは<span class="marker">あと<%= @task_today_counts %>個</span>です。もう少し頑張りましょう！
+      </div>
+      <div class="complete">
+        <table border="complete_task">
+          <tr>
+            <td class="present">獲得ご褒美</td>
+            <td class="present"><%= @task.present %></td>
+          </tr>
+        </table>
+      </div>
+  <% end %>
+
+   <div class="action">
+    <%= link_to "ホームへ戻る", today_path %>
+  </div>
+
 </div>

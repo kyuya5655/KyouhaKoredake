@@ -1,18 +1,15 @@
 <h2>本当に退会しますか？</h2>
 
-<div class='quit_check'>
-  退会するとこのユーザーアカウントでのログインが出来なくなってしまいます。
+<div class='quit_check_item'>
+  退会するとこのユーザーアカウントでのログインが出来なくなってしまいます。<br />
   退会する場合は、「退会する」をクリックしてください。
 </div>
 
-<div class="picture">
-  <%= image_tag 'お辞儀.jpg', size: '300x300' %>
-</div>
-
-<%= link_to "退会しない", user_path %>
-
-<%= link_to "退会する", user_withdraw_path, method: :patch, "data-confirm" => "退会しますか？",class:"btn btn-sm btn-danger destroy_book_94226"  %>
-
-<div class="picture">
-  <%= image_tag 'お辞儀２.jpg', size: '300x300' %>
+<div class="container">
+  <div class="quit_check">
+      <%= image_tag "お辞儀.jpg", size: "300x300" %>
+      <%= link_to "退会しない", user_path, class: "btn btn-info" %>
+      <%= link_to "退会する", user_withdraw_path, method: :patch, "data-confirm" => "退会しますか？",class:"btn btn-danger"%>
+      <%= image_tag "お辞儀２.jpg", size: "300x300" %>
+  </div>
 </div>

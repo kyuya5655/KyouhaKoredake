@@ -13,6 +13,9 @@ class TasksController < ApplicationController
     @q = Task.ransack(params[:q])
     @task_searches = @q.result(distinct: true).page(params[:page]).order(limit: :ASC)
     @result = params[:q]&.values&.reject(&:blank?)
+    @item = @task_searches.where(status: @result[1]).last
+ 
+
   end
 
   def create

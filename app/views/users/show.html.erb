@@ -1,28 +1,32 @@
-<h3>ユーザー情報</h3>
+<h2 class="headline">ユーザー情報</h3>
 
-<p><%= link_to "編集する", user_edit_path %></p>
+<div class="container">
+  <div class="edit_user">
+      <%= link_to "編集する", user_edit_path, class: "btn btn-info" %>
+    </div>
+  <table class="user">
+    <tr>
+      <td class="width30">ユーザー名</td>
+      <td class="width70"><%= current_user.name %></td>
+    </tr>
+    <tr>
+      <td class="width30">メールアドレス</td>
+      <td class="width70"><%= current_user.email %></td>
+    </tr>
+    <tr>
+      <td class="width30">
+        今日はこれだけ<br />
+        （残りタスク数）
+      </td>
+      <td class="width70"><%=  @task_today_counts %>件</td>
+    </tr>
+    <tr>
+      <td class="width30">
+        達成率<br />
+        （１ヶ月）
+      </td>
+      <td class="width70"><%= pie_chart @task_achievement_ratio, donut: true, suffix: "%" %></td>
+    </tr>
+  </table>
+</div>
 
-<table class="tasks" border="1" style="border-collapse: collapse">
-  <tr align='center'>
-    <td>ユーザー名</td>
-    <td><%= current_user.name %></td>
-  </tr>
-  <tr align='center'>
-    <td>メールアドレス</td>
-    <td><%= current_user.email %></td>
-  </tr>
-  <tr align='cernter'>
-    <td>
-      今日はこれだけ<br />
-      （残りタスク数）
-    </td>
-    <td><%=  @task_today_counts %>件</td>
-  </tr>
-  <tr align='center'>
-    <td>
-      達成率<br />
-      （１ヶ月）
-    </td>
-    <td><%= pie_chart @task_achievement_ratio, donut: true, suffix: "%" %></td>
-  </tr>
-</table>
