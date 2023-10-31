@@ -11,11 +11,8 @@ class TasksController < ApplicationController
 
   def search
     @q = Task.ransack(params[:q])
-    @task_searches = @q.result(distinct: true).page(params[:page]).order(limit: :ASC)
-    @result = params[:q]&.values&.reject(&:blank?)
-    @item = @task_searches.where(status: @result[1]).last
- 
-
+    @task_array = @q.result(distinct: true).page(params[:page]).order(limit: :ASC)
+    @task_searches = @task_array.select{|hoge|hoge[:user_id] == current_user.id}
   end
 
   def create

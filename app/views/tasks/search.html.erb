@@ -1,13 +1,11 @@
 <div class="container">
   <h2 class="headline">検索結果</h2>
     <table class="search_task">
-      <% if @result == [] %>
-        <h4 class="nothing">検索結果がありません。</h4>
-      <% elsif @task_searches.present? %>
+      <% if @task_searches.present? %>
       <% search_word = @q.name_cont %>
       <% search_status = @q.status_eq_any.enum_for %>
 
-    <h4 class="search_word">タスク名"<%= search_word %>"、ステータス"<%= @item.status_i18n %>" </h4>
+    <h4 class="search_word">タスク名"<%= search_word %>"、ステータス"<>" </h4>
       <thead>
         <tr>
           <th>ステータス</th>
