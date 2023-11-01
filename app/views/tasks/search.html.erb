@@ -5,7 +5,7 @@
       <% search_word = @q.name_cont %>
       <% search_status = @q.status_eq_any.enum_for %>
 
-    <h4 class="search_word">タスク名"<%= search_word %>"、ステータス"<>" </h4>
+    <h4 class="search_word">タスク名"<%= search_word %>"、ステータス"<%= @task_searches.first.status_i18n %>" </h4>
       <thead>
         <tr>
           <th>ステータス</th>
