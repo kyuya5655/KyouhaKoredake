@@ -6,6 +6,13 @@ class Task < ApplicationRecord
 
   enum status: { waiting: 0, started: 1, completed: 2 }
 
+  validate :start_limit_check
+
+	def start_limit_check
+    errors.add(:limit, "は開始より日付を入力してください") if self.start && self.limit && self.start > self.limit
+	end
+
+
   def get_image(width, height)
     unless image.attached?
       file_path = Rails.root.join('app/assets/images/本.png')

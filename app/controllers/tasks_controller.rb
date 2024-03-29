@@ -27,6 +27,9 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    unless @task.user == current_user
+      redirect_to new_task_path
+    end
   end
 
   def update
