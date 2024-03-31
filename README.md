@@ -32,16 +32,14 @@
 
 ## 設計
 ### ER図
-​
-### インフラ構成図
-
 
 ## 開発環境
 - OS：Linux(CentOS)
-- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- 言語：HTML,CSS,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
-​
+- インフラ：AWS
+
 ## 使用素材
 - Linustock (https://www.linustock.com/)
