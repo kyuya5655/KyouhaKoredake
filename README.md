@@ -32,6 +32,7 @@
 
 ## 設計
 ### ER図
+![スクリーンショット 2024-03-31 19 45 43](https://github.com/kyuya5655/KyouhaKoredake/assets/134293910/a3990d1a-4478-45e7-9db5-ffe177ccb54e)
 
 ## 開発環境
 - OS：Linux(CentOS)
